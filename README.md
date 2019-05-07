@@ -17,7 +17,7 @@ Frameworks utilisés pour les interfaces:
 ```
 git clone https://github.com/LIARALab/Lab-GUI.git
 docker build --rm -f "Dockerfile" -t lab-gui:1.0 .
-docker run --restart --rm -d -p 80:80/tcp lab-gui:1.0
+docker run --restart=always -d -p 80:80/tcp lab-gui:1.0
 ```
 
 ## Pour le developpement en local
