@@ -1,0 +1,155 @@
+/*
+    COLOR
+*/
+
+.texture_transparent {
+    opacity: 0;
+}
+
+.texture_white {
+    fill:white;
+    stroke: black;
+    stroke-width: 0.25px;
+}
+
+.texture_black {
+    fill:black;
+    stroke: black;
+    stroke-width: 0.25px;
+}
+
+.texture_light_grey {
+    fill:#B3B3B3;
+    stroke: black;
+    stroke-width: 0.25px;
+}
+
+.texture_dark_grey {
+    fill:#333333;
+    stroke: black;
+    stroke-width: 0.25px;
+}
+
+.texture_mid_grey {
+    fill: #535667;
+    stroke: black;
+    stroke-width: 0.25px;
+}
+
+.texture_light_grey_transparent {
+    fill: #EEEEEE;
+    opacity: 0.75;
+    stroke: black;
+    stroke-width: 0.25px;
+}
+
+.texture_brown {
+    stroke: black;
+    stroke-width: 0.25px;
+    fill: #630;
+}
+
+.texture_yellow {
+    stroke: black;
+    stroke-width: 0.25px;
+    fill:yellow;
+}
+
+.texture_soft_yellow {
+    stroke: black;
+    stroke-width: 0.25px;
+    fill:#fc3;
+}
+
+.texture_dark_yellow {
+    stroke: black;
+    stroke-width: 0.25px;
+    fill: #c90;
+}
+
+.texture_grey_stroke {
+    stroke: #666;
+    stroke-width: 0.5px;
+}
+
+/*
+    TEXTURE
+*/
+
+.texture_water {
+    stroke: black;
+    stroke-width: 0.5px;
+    fill: url(#water);
+}
+
+.texture_metal_hbrush {
+    stroke: black;
+    stroke-width: 0.5px;
+    fill: url(#metal-horizontal-brush);
+}
+
+.texture_metal_vbrush {
+    stroke: black;
+    stroke-width: 0.5px;
+    fill: url(#metal-vertical-brush);
+}
+
+.texture_marble {
+    stroke: black;
+    size: 0.25px;
+    fill: url(#marble);
+}
+
+.texture_white_wood_vgrain {
+    stroke: black;
+    stroke-width: 0.5px;
+    fill: url(#white-wood-vertical-grain);
+}
+
+.texture_beige_wood_hgrain {
+    stroke: black;
+    stroke-width: 0.5px;
+    fill: url(#beige-wood-horizontal-grain);
+}
+
+.texture_brick {
+    stroke: black;
+    stroke-width: 0.5px;
+    fill: url(#brick);
+}
+
+.texture_tile {
+    stroke: black;
+    stroke-width: 0.5px;
+    fill: url(#tile);
+}
+
+.texture_concrete {
+    stroke: black;
+    stroke-width: 0.5px;
+    fill: url(#grey-concrete);
+}
+
+.texture_concrete_dark_grey {
+    stroke: black;
+    stroke-width: 0.5px;
+    fill: url(#dark-grey-concrete);
+}
+
+.texture_leather_lgrain {
+    stroke: black;
+    stroke-width: 0.5px;
+    fill: url(#leather-large-grain);
+}
+
+.texture_leather_sgrain {
+    stroke: black;
+    stroke-width: 0.5px;
+    fill: url(#leather-small-grain);
+}
+
+.texture_edredon {
+    stroke: black;
+    stroke-width: 0.5px;
+    fill: url(#edredon);
+}

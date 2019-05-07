@@ -1,0 +1,635 @@
+{
+  "websockets":[
+    {"url":"ws://172.24.24.2:6094/","name":"RFID"},
+    {"url":"ws://172.24.24.3:6091/","name":"Objets"}
+  ],
+  "sensor": [
+    {
+      "interface_salle_dessus": [
+        {
+          "id_laboratory": "Capteur magn\u00E9tique porte salle de conf\u00E9rence",
+          "className": "animPorteSalleConference",
+          "rotateStart": 0,
+          "rotateFinal": -90,
+          "easing": "linear",
+          "duration" : 750
+        },
+        {
+          "id_laboratory": "Capteur magn\u00E9tique porte d'entr\u00E9e",
+          "className": "animPortePrincipale",
+          "rotateStart": 0,
+          "rotateFinal": -90,
+          "easing": "linear",
+          "duration" : 750
+        },
+        {
+          "id_laboratory": "Porte de la salle de bain",
+          "className": "animPorteSalleDeBain",
+          "rotateStart": 0,
+          "rotateFinal": -90,
+          "easing": "linear",
+          "duration" : 750
+        },
+        {
+          "id_laboratory": "Robinet eau froide cuisine",
+          "className": "robinetBaque",
+          "fillStart": "#005cbf",
+          "fillFinal": "#A4A4A4",
+          "easing": "easeInBack",
+          "duration": 1000
+        },
+        {
+          "id_laboratory": "Robinet eau froide salle de bain",
+          "className": "lavaboBaque",
+          "fillStart": "#005cbf",
+          "fillFinal": "#ffffff",
+          "easing": "easeInBack",
+          "duration": 1000
+        },
+        {
+          "id_laboratory": "Porte du refrigerateur",
+          "className": "animPorteFrigo",
+          "rotateStart": -45,
+          "rotateFinal": -135,
+          "easing": "linear",
+          "duration" : 750
+        },
+        {
+          "id_laboratory": "Capteur magn\u00E9tique de cuisine Porte 1 Haut",
+          "className": "animPortePlacardEvierHautGaucheGauche",
+          "rotateStart": 0,
+          "rotateFinal": 45,
+          "easing": "linear",
+          "duration" : 750
+        },
+        {
+          "id_laboratory": "Capteur magn\u00E9tique de cuisine Porte 2 Haut",
+          "className": "animPortePlacardEvierHautGaucheDroit",
+          "rotateStart": 0,
+          "rotateFinal": -45,
+          "easing": "linear",
+          "duration" : 750
+        },
+        {
+          "id_laboratory": "Capteur magn\u00E9tique de cuisine Porte 3 Haut",
+          "className": "animPortePlacardEvierHautDroitGauche",
+          "rotateStart": 0,
+          "rotateFinal": 45,
+          "easing": "linear",
+          "duration" : 750
+        },
+        {
+          "id_laboratory": "Capteur magn\u00E9tique de cuisine Porte 4 Haut",
+          "className": "animPortePlacardEvierHautDroitDroit",
+          "rotateStart": 0,
+          "rotateFinal": -45,
+          "easing": "linear",
+          "duration" : 750
+        },
+        {
+          "id_laboratory": "Capteur magn\u00E9tique de cuisine Porte 5 Haut",
+          "className": "animPortePlacardFrigoHautDroit",
+          "rotateStart": 0,
+          "rotateFinal": 45,
+          "easing": "linear",
+          "duration" : 750
+        },
+        {
+          "id_laboratory": "Capteur magn\u00E9tique de cuisine Porte 6 Haut",
+          "className": "animPortePlacardFrigoHautGauche",
+          "rotateStart": 0,
+          "rotateFinal": -45,
+          "easing": "linear",
+          "duration" : 750
+        },
+        {
+          "id_laboratory": "Capteur mag\u00E9tique CB6",
+          "className": "animPortePlacardFrigoBas",
+          "rotateStart": 0,
+          "rotateFinal": -45,
+          "easing": "linear",
+          "duration" : 750
+        },
+        {
+          "id_laboratory": "Capteur magn\u00E9tique cuisine Porte 1 Bas",
+          "className": "animPortePlacardEvierBasGauche",
+          "rotateStart": 0,
+          "rotateFinal": 45,
+          "easing": "linear",
+          "duration" : 750
+        },
+        {
+          "id_laboratory": "Capteur magn\u00E9tique cuisine Porte 2  Bas",
+          "className": "animPortePlacardEvierBasDroit",
+          "rotateStart": 0,
+          "rotateFinal": -45,
+          "easing": "linear",
+          "duration" : 750
+        },
+        {
+          "id_laboratory": "Premier tiroir du comptoir",
+          "className": "animTiroirDessusGauche",
+          "translateXStart": 0,
+          "translateXFinal": -10,
+          "easing": "linear",
+          "duration" : 750
+        },
+        {
+          "id_laboratory": "Deuxieme tiroir du comptoir",
+          "className": "animTiroirDessusDroite",
+          "translateXStart": 0,
+          "translateXFinal": -10,
+          "easing": "linear",
+          "duration" : 750
+        },
+        {
+          "id_laboratory":"",
+          "className": "lavaboBaque",
+          "fillStart": "#fff",
+          "fillFinal": "#A4A4A4",
+          "easing": "easeInBack",
+          "duration": 1000
+        },
+        {
+          "id_laboratory": "Temperature salle a manger",
+          "id": "#temp_manger"
+        },
+        {
+          "id_laboratory": "Temperature chambre",
+          "id": "#temp_chambre"
+        },
+        {
+          "id_laboratory": "Temperature salle de bain",
+          "id": "#temp_sdb"
+        },
+        {
+          "id_laboratory": "Capteur de mouvement chambre",
+          "id": "#capteur_chambre"
+        },
+        {
+          "id_laboratory": "Capteur de mouvement salle a manger",
+          "id": "#capteur_cuisine"
+        },
+        {
+          "id_laboratory": "172.24.25.14 - Adam5051 - 0 - 0",
+          "id": "#capteur_salon"
+        },
+        {
+          "id_laboratory": "Capteur de mouvement entr\u00E9e",
+          "id": "#capteur_couloir"
+        },
+        {
+          "id_laboratory": "Capteur de mouvement salle de bain",
+          "id": "#capteur_sdb"
+        },
+        {
+          "id_laboratory": "Plaque de pression chambre a coucher",
+          "className": "plaqueDePressionChambre",
+          "fillStart": "#990507",
+          "fillFinal": "#cccccc",
+          "easing": "linear",
+          "duration" : 750
+        },
+        {
+          "id_laboratory": "Plaque de pression salle de bain",
+          "className": "plaqueDePressionSDB",
+          "fillStart": "#990507",
+          "fillFinal": "#cccccc",
+          "easing": "linear",
+          "duration" : 750
+        }
+    
+      ]
+    },
+    {
+      "interface_cuisine_face": [
+        {
+          "id_laboratory": "Robinet eau froide cuisine",
+          "className": "animEau",
+          "rotateXStart": 180,
+          "rotateXFinal": 180,
+          "scaleYStart": 1,
+          "scaleYEnd": 2,
+          "translateYStart": 392,
+          "translateYFinal": 392,
+          "easing": "linear",
+          "duration": 200
+        },
+        {
+          "id_laboratory": "Premier tiroir du comptoir",
+          "className": "animTiroirGauche",
+          "scaleStart": 1,
+          "scaleFinal": 1.2,
+          "translateXStart": 0,
+          "translateXFinal": -45,
+          "translateYStart": 0,
+          "translateYFinal": -95,
+          "easing": "linear",
+          "duration" : 500
+        },
+        {
+          "id_laboratory": "Deuxieme tiroir du comptoir",
+          "className": "animTiroirDroite",
+          "scaleStart": 1,
+          "scaleFinal": 1.2,
+          "translateXStart": 0,
+          "translateXFinal": -100,
+          "translateYStart": 0,
+          "translateYFinal": -95,
+          "easing": "linear",
+          "duration" : 500
+        },
+        {
+          "id_laboratory": "Capteur magn\u00E9tique cuisine Porte 1 Bas",
+          "className": "animComptoirEvierPorteGauche",
+          "skewYStart": 0,
+          "skewYFinal": 10,
+          "scaleXStart": 1,
+          "scaleXFinal": 0.8,
+          "translateXStart": 0,
+          "translateXFinal": 32,
+          "translateYStart": 0,
+          "translateYFinal": -27,
+          "perspective": 100,
+          "easing": "linear",
+          "duration" : 750
+        },
+        {
+          "id_laboratory": "Capteur magn\u00E9tique cuisine Porte 2  Bas",
+          "className": "animComptoirEvierPorteDroite",
+          "rotateYStart": 180,
+          "rotateYFinal": 180,
+          "skewYStart": 0,
+          "skewYFinal": 10,
+          "scaleXStart": 1,
+          "scaleXFinal": 0.8,
+          "translateXStart": 978,
+          "translateXFinal": 900,
+          "translateYStart": 0,
+          "translateYFinal": -66,
+          "easing": "linear",
+          "duration" : 750
+        },
+        {
+          "id_laboratory": "Capteur magn\u00E9tique cuisine Porte 2  Bas",
+          "className": "animPoignerComptoirEvierPorteDroite",
+          "rotateYStart": 180,
+          "rotateYFinal": 180,
+          "skewYStart": 0,
+          "skewYFinal": 10,
+          "scaleXStart": 1,
+          "scaleXFinal": 0.8,
+          "translateXStart": 793,
+          "translateXFinal": 755,
+          "translateYStart": 0,
+          "translateYFinal": -31,
+          "easing": "linear",
+          "duration" : 750
+        },
+        {
+          "id_laboratory": "Capteur mag\u00E9tique CB6",
+          "className": "animComptoirDroiteFour",
+          "rotateYStart": 180,
+          "rotateYFinal": 180,
+          "skewYStart": 0,
+          "skewYFinal": 10,
+          "scaleXStart": 1,
+          "scaleXFinal": 0.8,
+          "translateXStart": 1890,
+          "translateXFinal": 1725,
+          "translateYStart": 0,
+          "translateYFinal": -145,
+          "easing": "linear",
+          "duration" : 750
+        },
+        {
+          "id_laboratory": "Capteur mag\u00E9tique CB6",
+          "className": "animPoignerComptoirDroiteFour",
+          "rotateYStart": 180,
+          "rotateYFinal": 180,
+          "skewYStart": 0,
+          "skewYFinal": 10,
+          "scaleXStart": 1,
+          "scaleXFinal": 0.8,
+          "translateXStart": 1670,
+          "translateXFinal": 1550,
+          "translateYStart": 0,
+          "translateYFinal": -102,
+          "easing": "linear",
+          "duration" : 750
+        },
+        {
+          "id_laboratory": "Porte du refrigerateur",
+          "className": "animPorteFrigoBas",
+          "skewYStart": 0,
+          "skewYFinal": 10,
+          "scaleXStart": 1,
+          "scaleXFinal": 0.8,
+          "translateXStart": 0,
+          "translateXFinal": 215,
+          "translateYStart": 0,
+          "translateYFinal": -190,
+          "easing": "linear",
+          "duration" : 750
+        },
+        {
+          "id_laboratory": "Capteur magn\u00E9tique de cuisine Porte 1 Haut",
+          "className": "animPlacardEvierGauchePorteGauche",
+          "skewYStart": 0,
+          "skewYFinal": 10,
+          "scaleXStart": 1,
+          "scaleXFinal": 0.5,
+          "translateXStart": 0,
+          "translateXFinal": 120,
+          "translateYStart": 0,
+          "translateYFinal": -42,
+          "easing": "linear",
+          "duration" : 750
+        },
+        {
+          "id_laboratory": "Capteur magn\u00E9tique de cuisine Porte 2 Haut",
+          "className": "animPlacardEvierGauchePorteDroite",
+          "rotateYStart": 180,
+          "rotateYFinal": 180,
+          "skewYStart": 0,
+          "skewYFinal": 10,
+          "scaleXStart": 1,
+          "scaleXFinal": 0.5,
+          "translateXStart": 749,
+          "translateXFinal": 584,
+          "translateYStart": 0,
+          "translateYFinal": -58,
+          "easing": "linear",
+          "duration" : 750
+        },
+        {
+          "id_laboratory": "Capteur magn\u00E9tique de cuisine Porte 2 Haut",
+          "className": "animPoignerPlacardEvierGauchePorteDroite",
+          "rotateYStart": 180,
+          "rotateYFinal": 180,
+          "skewYStart": 0,
+          "skewYFinal": 10,
+          "scaleXStart": 1,
+          "scaleXFinal": 0.5,
+          "translateXStart": 685,
+          "translateXFinal": 553,
+          "translateYStart": 0,
+          "translateYFinal": -46,
+          "easing": "linear",
+          "duration" : 750
+        },
+        {
+          "id_laboratory": "Capteur magn\u00E9tique de cuisine Porte 3 Haut",
+          "className": "animPlacardEvierDroitePorteGauche",
+          "skewYStart": 0,
+          "skewYFinal": 10,
+          "scaleXStart": 1,
+          "scaleXFinal": 0.5,
+          "translateXStart": 0,
+          "translateXFinal": 210,
+          "translateYStart": 0,
+          "translateYFinal": -74,
+          "easing": "linear",
+          "duration" : 750
+        },
+        {
+          "id_laboratory": "Capteur magn\u00E9tique de cuisine Porte 4 Haut",
+          "className": "animPlacardEvierDroitePorteDroite",
+          "rotateYStart": 180,
+          "rotateYFinal": 180,
+          "skewYStart": 0,
+          "skewYFinal": 10,
+          "scaleXStart": 1,
+          "scaleXFinal": 0.5,
+          "translateXStart": 1106,
+          "translateXFinal": 852,
+          "translateYStart": 0,
+          "translateYFinal": -89,
+          "easing": "linear",
+          "duration" : 750
+        },
+        {
+          "id_laboratory": "Capteur magn\u00E9tique de cuisine Porte 4 Haut",
+          "className": "animPoignerPlacardEvierDroitePorteDroite",
+          "rotateYStart": 180,
+          "rotateYFinal": 180,
+          "skewYStart": 0,
+          "skewYFinal": 10,
+          "scaleXStart": 1,
+          "scaleXFinal": 0.5,
+          "translateXStart": 1043,
+          "translateXFinal": 819,
+          "translateYStart": 0,
+          "translateYFinal": -76,
+          "easing": "linear",
+          "duration" : 750
+        },
+        {
+          "id_laboratory": "Capteur magn\u00E9tique de cuisine Porte 5 Haut",
+          "className": "animPlacardCentrePorteGauche",
+          "skewYStart": 0,
+          "skewYFinal": 10,
+          "scaleXStart": 1,
+          "scaleXFinal": 0.5,
+          "translateXStart": 0,
+          "translateXFinal": 410,
+          "translateYStart": 0,
+          "translateYFinal": -144,
+          "easing": "linear",
+          "duration" : 750
+        },
+        {
+          "id_laboratory": "Capteur magn\u00E9tique de cuisine Porte 6 Haut",
+          "className": "animPlacardCentrePorteDroite",
+          "rotateYStart": 180,
+          "rotateYFinal": 180,
+          "skewYStart": 0,
+          "skewYFinal": 10,
+          "scaleXStart": 1,
+          "scaleXFinal": 0.5,
+          "translateXStart": 2015,
+          "translateXFinal": 1543,
+          "translateYStart": 0,
+          "translateYFinal": -167,
+          "easing": "linear",
+          "duration" : 750
+        },
+        {
+          "id_laboratory": "Capteur magn\u00E9tique de cuisine Porte 6 Haut",
+          "className": "animPoignerPlacardCentrePorteDroite",
+          "rotateYStart": 180,
+          "rotateYFinal": 180,
+          "skewYStart": 0,
+          "skewYFinal": 10,
+          "scaleXStart": 1,
+          "scaleXFinal": 0.5,
+          "translateXStart": 1917,
+          "translateXFinal": 1495,
+          "translateYStart": 0,
+          "translateYFinal": -153,
+          "easing": "linear",
+          "duration" : 750
+        },
+        {
+          "id_laboratory": "Moteur vitesse 1",
+          "className": "animFan",
+          "scaleStart": 0.1,
+          "scaleFinal": 0.1,
+          "translateYStart": -155,
+          "translateYFinal": 1000,
+          "easing": "easeInBack",
+          "duration": 0 
+        },
+        {
+          "id_laboratory": "Lumière de la hotte",
+          "className": "animLumiere",
+          "translateXStart": 835.2,
+          "translateXFinal": 0,
+          "translateYStart": 176.5,
+          "translateYFinal": 0,
+          "duration": 0
+        }
+      ]
+    }  
+  ],
+  "RFID": [
+    {
+      "id_laboratory": "Tasse1",
+      "id_software": "Tasse 1",
+      "btnSoftwareID":"btnTasse1",
+      "classAffiche":"Tasses"
+    },
+    {
+      "id_laboratory": "Tasse2",
+      "id_software": "Tasse 2",
+      "btnSoftwareID":"btnTasse2",
+      "classAffiche":"Tasses"
+    },
+    {
+      "id_laboratory": "Tasse3",
+      "id_software": "Tasse 3",
+      "btnSoftwareID":"btnTasse3",
+      "classAffiche":"Tasses"
+    },
+    {
+      "id_laboratory": "Tasse4",
+      "id_software": "Tasse 4",
+      "btnSoftwareID":"btnTasse4",
+      "classAffiche":"Tasses"
+    },
+    {
+      "id_laboratory": "sAssiette1",
+      "id_software": "Petite Assiette 1",
+      "btnSoftwareID":"btnSassiette1",
+      "classAffiche":"Petites Assiettes"
+    },
+    {
+      "id_laboratory": "sAssiette2",
+      "id_software": "Petite Assiette 2",
+      "btnSoftwareID":"btnSassiette2",
+      "classAffiche":"Petites Assiettes"
+    },
+    {
+      "id_laboratory": "sAssiette3",
+      "id_software": "Petite Assiette 3",
+      "btnSoftwareID":"btnSassiette3",
+      "classAffiche":"Petites Assiettes"
+    },
+    {
+      "id_laboratory": "sAssiette4",
+      "id_software": "Petite Assiette 4",
+      "btnSoftwareID":"btnSassiette4",
+      "classAffiche":"Petites Assiettes"
+    },
+    {
+      "id_laboratory": "Assiette1",
+      "id_software": "Assiette 1",
+      "btnSoftwareID":"btnAssiette1",
+      "classAffiche":"Assiettes"
+    },
+    {
+      "id_laboratory": "Assiette2",
+      "id_software": "Assiette 2",
+      "btnSoftwareID":"btnAssiette2",
+      "classAffiche":"Assiettes"
+    },
+    {
+      "id_laboratory": "Assiette3",
+      "id_software": "Assiette 3",
+      "btnSoftwareID":"btnAssiette3",
+      "classAffiche":"Assiettes"
+    },
+    {
+      "id_laboratory": "Assiette4",
+      "id_software": "Assiette 4",
+      "btnSoftwareID":"btnAssiette4",
+      "classAffiche":"Assiettes"
+    },
+    {
+      "id_laboratory": "Bol1",
+      "id_software": "Bol 1",
+      "btnSoftwareID":"btnBol1",
+      "classAffiche":"Bols"
+    },
+    {
+      "id_laboratory": "Bol2",
+      "id_software": "Bol 2",
+      "btnSoftwareID":"btnBol2",
+      "classAffiche":"Bols"
+    },
+    {
+      "id_laboratory": "Bol3",
+      "id_software": "Bol 3",
+      "btnSoftwareID":"btnBol3",
+      "classAffiche":"Bols"
+    },
+    {
+      "id_laboratory": "Bol4",
+      "id_software": "Bol 4",
+      "btnSoftwareID":"btnBol4",
+      "classAffiche":"Bols"
+    },
+    {
+      "id_laboratory": "Sucre",
+      "id_software": "Sucre",
+      "btnSoftwareID":"btnSucre",
+      "classAffiche":"Autres"
+    },
+    {
+      "id_laboratory": "Lait",
+      "id_software": "Lait",
+      "btnSoftwareID":"btnLait",
+      "classAffiche":"Autres"
+    },
+    {
+      "id_laboratory": "Chaudron",
+      "id_software": "Chaudron",
+      "btnSoftwareID":"btnChaudron",
+      "classAffiche":"Autres"
+    },
+    {
+      "id_laboratory": "Bouilloir",
+      "id_software": "Bouilloir",
+      "btnSoftwareID":"btnBouilloir",
+      "classAffiche":"Autres"
+    },
+    {
+      "id_laboratory": "Sel",
+      "id_software": "Sel",
+      "btnSoftwareID":"btnSel",
+      "classAffiche":"Autres"
+    },
+    {
+      "id_laboratory": "Poivre",
+      "id_software": "Poivre",
+      "btnSoftwareID":"btnPoivre",
+      "classAffiche":"Autres"
+    },
+    {
+      "id_laboratory": "Poelon",
+      "id_software": "Poelon",
+      "btnSoftwareID":"btnPoelon",
+      "classAffiche":"Autres"
+    }
+  ]
+}

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/html">
+
+<head>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" id="bootstrap-css">
+      <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+        
+      <link rel="stylesheet" href="css/appartement/chambre.css">
+      <link rel="stylesheet" href="css/texture.css">
+      <link rel="stylesheet" href="css/interface.css">
+      <link rel="stylesheet" href="css/interface_de_controle/boutonControleObjetRFID.css" >
+      <link rel="stylesheet" href="css/interface_de_controle/temperature.css" >
+      <!-- include the style -->
+      <link rel="stylesheet" href="node_modules/alertifyjs/build/css/alertify.min.css" />
+      <!-- include a theme -->
+      <link rel="icon" href="ressource/img-controle/logo_icon.png" >
+        
+      <script src="node_modules/jquery/dist/jquery.js"></script> 
+      <script src="node_modules/jquery/dist/jquery.min.js"></script>
+      <script src="node_modules/animejs/anime.min.js"></script>
+      <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+      <script src="node_modules/alertifyjs/build/alertify.min.js"></script>
+        
+      
+
+      <script src="js/initialisation.js"></script>
+
+      <title>Interface LIARA</title>
+</head>
+
+<body>
+      <div id="container_plan">
+
+            <div id="container-temperature">
+            </div>
+
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
+                  id="plan" version="1.1" viewBox="0 0 559 247" overflow="visible">
+
+                  <!-- ----------------------------------------------------------------------------------------------------------- -->
+                  <!-- ----------------------------------------- BACKGROUND ------------------------------------------------------ -->
+                  <!-- ----------------------------------------------------------------------------------------------------------- -->
+                  <g id="backgroundInterface">
+                        <!--    Assets immobile    -->
+                        <polygon id="zone_morte"      class="texture_white" points="489.5 7.5 489.5 0.5 558.5 0.5 558.5 90.5 466.5 90.333 466.678 7.5 489.5 7.5" />
+                        <rect    id="fond"            class="texture_concrete"             x="0"     y="0"   width="559"   height="247"/>
+                        <polygon id="zone_sbd"        class="texture_tile" points="397 99 397 238 492 238 492 192 498 192 498 238 550 238 550 99 397 99" />
+                        <image xlink:href="../ressource/img-controle/logo.png" x="468" y="30" width="90" />
+                        <rect    id="mur1"            class="texture_brick" x="385.5" y="238.5" width="25" height="28" />
+                        <polygon id="mur2"            class="texture_brick" points="0.5 0.5 0.5 116.5 5.5 116.5 5.5 44.5 42.5 7.5 380.5 7.5 380.5 0.5 0.5 0.5"/>
+                        <polygon id="mur3"            class="texture_brick" points="0.5 166.5 0.5 257.5 385.5 256.5 385.5 238.5 269.5 238.5 269.5 125.5 261.5 125.5 261.5 202.5 225.5 238.5 154.5 238.5 118 202 145.5 174.5 140.5 169.5 65.5 244.5 5.5 184.5 5.5 166.5 0.5 166.5"/>
+                        <polygon id="mur4"            class="texture_brick" points="387.86 238.5 387.86 90.5 405.5 90.5 405.5 98.5 396.5 98.5 396.5 238.5 387.86 238.5" />
+                        <polygon id="mur5"            class="texture_brick" points="425.5 0.5 489.5 0.5 489.5 7.5 466.5 7.5 466.5 90.5 558.5 90.5 558.5 256.5 501.5 256.5 501.5 266.5490.5 266.5 490.5 256.5 410.5 256.5 410.5 238.5 492.5 238.5 492.5 192.5 497.5 192.5 497.5 238.5 550.5 238.5 550.5 98.5 450.5 98.5 450.5 90.5 458.5 90.5 458.5 7.5 425.5 7.5 425.5 0.5" />
+           
+                  </g>
+
+                  <!-- ----------------------------------------------------------------------------------------------------------- -->
+                  <!-- -------------------------------------------- CHAMBRE -----------------_------------------------------------ -->
+                  <!-- ----------------------------------------------------------------------------------------------------------- -->
+                  <g id="chambre">
+                        <!-- ----------------- Plaque de pression ------------------- -->
+                        <rect class="contourPlaque" x="310.5" y="144.5" width="41" height="41"></rect>
+                        <path d="M351,145v40H311V145h40m1-1H310v42h42V144Z"></path>
+                        <rect class="plaqueDePressionChambre texture_light_grey_transparent" x="313" y="146.625" width="36" height="36.75"></rect>
+
+                        <rect class="bibliotequeChambre texture_beige_wood_hgrain" x="368" y="110" width="17" height="51" />
+                        <rect class="lit" x="279" y="181" width="104" height="54" fill="#EFEFEF"></rect>
+                        <path class="lit"
+                              d="M379.337,185.606l-6.421.905a32.252,32.252,0,0,1-8.756.036l-7.092-.941-.8,13.047a145.444,145.444,
+                              0,0,0,.02,18.06L357.068,229l7.221-.958a31.3,31.3,0,0,1,8.5.035l6.55.924c1.483-6.673,1.35-5.783
+                              ,1.35-22.078C380.687,190.174,379.337,185.606,379.337,185.606Z" fill="#EFEFEF"></path>
+                        <!-- ----------------- bonhomme ------------------- -->
+                        <path class="bonhommeAnime corps"
+                              d="M353.66,205.61l3.252-.65s-1.3-3.252,0-5.2,9.106-3.252,10.407-1.3-.65,3.9-.65,3.9,1.3.65,0,1.951-3.9
+                              ,0-3.9.65,1.951,1.3,1.951,1.3,1.3.65,0,1.3a5.078,5.078,0,0,1-3.252,0l-1.951,2.6h-2.6l-1.3,1.3Z"></path>
+                        <path class="bonhommeAnime corps"
+                              d="M346.92,203.6s6.338,3.169,6.338,5.07-.634,2.535-1.9,3.8-10.14-3.8-10.14-3.8l-3.263-3.059,3.153-4.594Z">
+                        </path>
+                        <path class="bonhommeAnime chemise"
+                              d="M353.01,204.309c-1.3-.65-4.925.2-4.925.2s4.8,2.371,4.864,4.011-1.89,4.241-1.89,4.241l-11.11-4.562s-5.59
+                              ,12.257,1.134,12.962,15.179-9.376,15.179-9.376S354.311,204.96,353.01,204.309Z"></path>
+                        <path class="bonhommeAnime corps"
+                              d="M345.688,203.338l1.865.9h5.07l.7.8,1.2-3.339,2.535-3.169.634-1.268s.474-1.759,1.741-1.125a1.666,1.666,0
+                              ,0,1,.794,2.023L364,197.78s-1.87-7.485-3.771-7.485a6.081,6.081,0,0,0-3.079.76C356.426,190.928,345.688,203.338
+                              ,345.688,203.338Z"></path>
+                        <path class="bonhommeAnime corps"
+                              d="M369.27,212.765c.65,3.252,0,3.9-1.3,4.553s-2.6-1.3-2.6-1.3v-1.951s.136-.891-.582-.445-.719,1.1-1.369,1.1
+                              ,0-1.951,0-1.951S368.62,209.513,369.27,212.765Z"></path>
+                        <path class="bonhommeAnime" d="M357.905,198.925"></path>
+                        <path class="bonhommeAnime" d="M359.5,200.5"></path>
+                        <path class="cheveux bonhommeAnime" d="M363.5,199.5"></path>
+                        <path class="bonhommeAnime bordureBonhomme" d="M365.5,197.5"></path>
+                        <path class="bonhommeAnime cheveux"
+                              d="M370.571,196.5A4.19,4.19,0,0,0,367,199.156a12.325,12.325,0,0,0-.986,3.2,14.275,14.275,0,0,0-1.55
+                              ,1.442c-.4.509-1.7.509-2.353,1.16s3.1.81,2.523,2.031-3.824.571-3.824.571-1.3-.65-1.951,2.6,9.106
+                              ,2.6,9.106,2.6a7.224,7.224,0,0,0,5.2-7.155A15.344,15.344,0,0,0,370.571,196.5Z"></path>
+                        <!-- ----------------- edredon ------------------- -->
+                        <path class="litStyle texture_edredon"
+                              d="M278.6,181a5.8,5.8,0,0,0-5.6,5.977v42.046A5.8,5.8,0,0,0,278.6,235H354l-18-49,3-5"></path>
+                        
+                  </g>
+
+                  <!-- ----------------------------------------------------------------------------------------------------------- -->
+                  <!-- -------------------------------------------- SALON -------------------------------------------------------- -->
+                  <!-- ----------------------------------------------------------------------------------------------------------- -->
+                  <g id="salon">
+                        <!--  Assets immobile   -->
+                        <rect id="bibliotheque"    class="texture_beige_wood_hgrain" x="351"   y="0"  width="13" height="35" transform="translate(340 375) rotate(-90)" />
+                        <rect id="meuble_tv"       class="texture_beige_wood_hgrain" x="0"     y="27" width="61" height="12" rx="4.581" ry="4.581" transform="translate(-14.401 31.232) rotate(-45)" />
+                        <path id="pied_tv"         class="texture_black"             d="M26,31V41a1,1,0,0,0,1,1h0a1,1,0,0,0,1-1V32a1,1,0,0,1,1-1h9a1,1,0,0,0,1-1h0a1,1,0,0,0-1-1H27a1,1,0,0,0-1,1Z" />
+                        <rect id="tv"              class="texture_metal_hbrush"      x="5.398" y="30" width="50" height="4.95" transform="translate(-14.401 31.232) rotate(-45)" />
+                        <path id="table_manger"    class="texture_beige_wood_hgrain" d="M295.472,10.4V62.281l-3.363.4a190.231,190.231,0,0,1-44.745,0l-3.363-.4V10.4l8.886-.79a190.345,190.345,0,0,1,33.7,0Z" />
+                        <path id="fauteuil1_table" class="texture_leather_lgrain"    d="M240.842,47.349V52.97a.725.725,0,0,1-.725.725H203.383a.725.725,0,0,1-.725-.725V15.53a.725.725,0,0,1,.725-.725h36.734a.725.725,0,0,1,.725.725v5.621a.725.725,
+                                                                                        0,0,1-.725.725h-30.37a.725.725,0,0,0-.725.725V45.9a.725.725,0,0,0,.725.725h30.37A.725.725,0,0,1,240.842,47.349Z"/>
+                        <path id="fauteuil2_table" class="texture_leather_sgrain   " d="M241.857,21.876H209.3a.28.28,0,0,0-.28.28V46.345a.28.28,0,0,0,.28.28h32.555a1.106,1.106,0,0,0,1.106-1.106V22.982A1.106,1.106,0,0,0,241.857,21.876Z" />
+                        <path id="fauteuil1_tv"    class="texture_leather_lgrain"    d="M45.842,97.349v5.621a.725.725,0,0,1-.725.725H8.383a.725.725,0,0,1-.725-.725V65.53a.725.725,0,0,1,.725-.725H45.117a.725.725,0,0,1,.725.725v5.621a.725.725,
+                                                                                        0,0,1-.725.725H14.747a.725.725,0,0,0-.725.725V95.9a.725.725,0,0,0,.725.725h30.37A.725.725,0,0,1,45.842,97.349Z"/>
+                        <path id="fauteuil2_tv"    class="texture_leather_sgrain"    d="M46.857,71.876H14.3a.28.28,0,0,0-.28.28V96.345a.28.28,0,0,0,.28.28H46.857a1.106,1.106,0,0,0,1.106-1.106V72.982A1.106,1.106,0,0,0,46.857,71.876Z"/>
+                        <path id="fauteuil1"       class="texture_leather_lgrain"    d="M95.175,155.374l4.088-3.858a.725.725,0,0,1,1.025.03L125.5,178.263a.725.725,0,0,1-.03,1.025l-27.231,25.7a.725.725,0,0,1-1.025-.03L72,178.237a.725.725,0,0,1,
+                                                                                       .03-1.025l4.088-3.858a.725.725,0,0,1,1.025.03l20.843,22.088a.725.725,0,0,0,1.025.03l16.945-15.99a.725.725,0,0,0,.03-1.025L95.145,156.4A.725.725,0,0,1,95.175,155.374Z" />
+                        <path id="fauteuil2"       class="texture_leather_sgrain"    d="M75.951,172.119,98.293,195.8a.28.28,0,0,0,.4.011l17.593-16.6a.28.28,0,0,0,.011-.4L93.951,155.133a1.106,1.106,0,0,0-1.564-.045L76,170.555A1.106,1.106,0,0,0,75.951,172.119Z"/>
+                        <!--  Animation   -->
+                        <polyline id="porte_salle_conference"   class="animPorteSalleConference texture_brown"    points="0.5 116.5 6.5 116.5 6.5 166.5 0.5 166.5 0.5 116.5" />
+                        <ellipse  id="porte_salle_conference_p" class="animPorteSalleConference texture_yellow"   cx="8" cy="161" rx="1.5" ry="2.5" />
+                        <polyline id="porte_principale"         class="animPortePrincipale      texture_brown"    points="425 0.5 425 8.167 381.144 8.167 381.144 0.5 425 0.5" />
+                        <ellipse  id="porte_principale_p"       class="animPortePrincipale      texture_yellow"   cx="385.968" cy="8.833" rx="2.193" ry="1.667" />
+                        <polyline id="porte_salle_de_bain"      class="animPorteSalleDeBain     texture_brown"    points="406.144 99 406.144 90.183 450 90.183 450 99 406.144 99" />
+                        <ellipse  id="porte_salle_de_bain_p"    class="animPorteSalleDeBain     texture_yellow"   cx="446.176" cy="88.917" rx="2.193" ry="1.417" />
+                  </g>
+                  <!-- ----------------------------------------------------------------------------------------------------------- -->
+                  <!-- --------------------------------------- CUISINE ----------------------------------------------------------- -->
+                  <!-- ----------------------------------------------------------------------------------------------------------- -->
+
+                  <g id="cuisine">
+                        <!--  Assets immobile inférieur  -->
+                        <polygon id="four"                   class="texture_dark_grey"          points="202 208 229.184 235 258 207.481 230.272 181 202 208" />
+                        <ellipse id="plaque_1"               class="texture_grey_stroke"        cx="218.138" cy="208.779" rx="8.731" ry="8.567" />
+                        <ellipse id="plaque_2"               class="texture_grey_stroke"        cx="231.412" cy="196.184" rx="6.35" ry="6.231" />
+                        <ellipse id="plaque_3"               class="texture_grey_stroke"        cx="243.281" cy="205.246" rx="5.291" ry="5.192" />
+                        <ellipse id="plaque_4"               class="texture_grey_stroke"        cx="225.321" cy="222.87" rx="5.291" ry="5.192" />                              
+                        <ellipse id="plaque_5"               class="texture_grey_stroke"        cx="234.301" cy="214.058" rx="5.291" ry="5.192" />
+                        <rect    id="frigo"                  class="texture_concrete_dark_grey" x="130.95" y="181.519" width="38.93" height="43.134" transform="translate(-99.548 165.842) rotate(-45)" />
+                        <rect    id="frigo_arriere"          class="texture_mid_grey"           x="135.688" y="199.354" width="1.054" height="35.609"transform="translate(-113.658 159.923) rotate(-45)"/>
+                        <polygon id="comptoir_centre"        class="texture_marble"             points="151 235 177 208 202 208 230 234 226 238 154 238 151 235" />
+                        <rect    id="placard_centre_dessus"  class="texture_white_wood_vgrain"  x="169" y="219.704" width="42" height="18.296" />
+                        <!--  Animation inférieur -->
+                        <rect id="frigo_porte"                    class="animPorteFrigo texture_mid_grey"                     x="150" y="173.5" width="2.623" height="43.134"transform="rotate(-45)"/>
+                        <rect id="frigo_porte_p"                  class="animPorteFrigo texture_light_grey"                   x="152" y="205" width="1.141" height="5.87"transform="rotate(-45)"/>
+                        <rect id="frigo_porte_fond"               class="animPorteFrigo texture_dark_grey"                    x="150" y="173.5" width="0.58" height="43.134"transform="rotate(-45)"/>
+                        <rect id="comptoir_centre_porte_p"        class="animPortePlacardFrigoBas texture_light_grey"         x="198" y="206" width="2" height="1" rx="0.5" ry="0.5" />
+                        <path id="comptoir_centre_porte"          class="animPortePlacardFrigoBas texture_soft_yellow"        d="M178.4,206.545H200.6c.772,0,1.4.855,1.4,1.909H177C177,207.4,177.626,206.545,178.4,206.545Z" />
+                        <rect id="placard_centre_porte_gauche_p"  class="animPortePlacardFrigoHautGauche texture_light_grey"  x="185" y="218" width="2" height="1"    rx="0.5" ry="0.5" />
+                        <path id="placard_centre_porte_gauche"    class="animPortePlacardFrigoHautGauche texture_soft_yellow" d="M170.174,218.545h18.652c.648,0,1.174.855,1.174,1.909H169C169,219.4,169.526,218.545,170.174,218.545Z" />
+                        <rect id="placard_centre_porte_droite_p"  class="animPortePlacardFrigoHautDroit texture_light_grey"   x="193" y="218" width="2" height="1" rx="0.5" ry="0.5" />
+                        <path id="placard_centre_porte_droite"    class="animPortePlacardFrigoHautDroit texture_soft_yellow"  d="M191.174,218.545h18.652c.648,0,1.174.855,1.174,1.909H190C190,219.4,190.526,218.545,191.174,218.545Z" />
+                        <rect id="comptoir_evier_porte_gauche_p"  class="animPortePlacardEvierBasGauche texture_light_grey"   x="223.5" y="139.5" width="2" height="1" rx="0.5" ry="0.5" />
+                        <path id="comptoir_evier_porte_gauche"    class="animPortePlacardEvierBasGauche texture_soft_yellow"  d="M225.061,142.3v-29.45c0-1.024,1.316-1.853,2.939-1.853h0v33.157h0C226.377,144.157,225.061,143.327,225.061,142.3Z" />
+                        <rect id="comptoir_evier_porte_droite_p"  class="animPortePlacardEvierBasDroit texture_light_grey"    x="223.5" y="149.5" width="2" height="1" rx="0.5" ry="0.5" />
+                        <path id="comptoir_evier_porte_droite"    class="animPortePlacardEvierBasDroit texture_soft_yellow"   d="M225.061,177.1V146.9c0-1.05,1.316-1.9,2.939-1.9h0v34h0C226.377,179,225.061,178.149,225.061,177.1Z" />
+                        <rect id="tiroir_droite_fond"             class="animTiroirDessusDroite texture_soft_yellow"                x="226.25"  y="160"     width="16.5" height="18" rx="0.593"ry="0.593" />
+                        <rect id="tiroir_droite_face"             class="animTiroirDessusDroite texture_dark_yellow"                x="226.25"  y="160"     width="3"    height="18" />
+                        <rect id="tiroir_droite_p"                class="animTiroirDessusDroite texture_light_grey"                 x="225"     y="168.5"   width="1"    height="4"  rx="0.5" ry="0.5" />
+                        <rect id="tiroir_droite_fond"             class="animTiroirDessusGauche texture_soft_yellow"                x="226.25"  y="112"     width="16.5" height="18" rx="0.593" ry="0.593"/>
+                        <rect id="tiroir_droite_face"             class="animTiroirDessusGauche texture_dark_yellow"                x="226.25"  y="112"     width="3"    height="18"/>
+                        <rect id="tiroir_droite_p"                class="animTiroirDessusGauche texture_light_grey"                 x="225"     y="120.5"   width="1"    height="4"  rx="0.5" ry="0.5"/>
+                        <!--  Assets immobile supérieur       -->
+                        <rect id="tiroir_centre_face"    class="texture_dark_yellow"       x="226.25"  y="130"   width="3"     height="30"/>
+                        <rect id="tiroir_centre_p"       class="texture_light_grey"        x="223.667" y="144.5" width="6.667" height="1" rx="0.5" ry="0.5"transform="translate(372 -82) rotate(90)"/>
+                        <path id="comptoir_evier"        class="texture_marble"            d="M228.406,179.406l27.113,27.113a1.387,1.387,0,0,0,1.962,0l3.113-3.113a1.387,1.387,0,0,0, .406-.981V111.387A1.387,1.387,0,0,0,259.613,110h-28.97A2.643,2.643,0,0,0,228,112.643v65.783A1.387, 1.387,0,0,0,228.406,179.406Z" />
+                        <rect id="evier_bordure"         class="texture_light_grey"        x="233" y="130" width="24" height="21.517" rx="1.158" ry="1.158" />
+                        <path id="evier_interieur"       class="texture_mid_grey"          d="M234.655,132.448v16.622a.775.775,0,0,0,.757.793h15.866a.775.775,0,0,0,.757-.793V132.448a.775.775, 0,0,0-.757-.793H235.412A.775.775,0,0,0,234.655,132.448Z" />
+                        <rect id="comptoir_evier_dessus" class="texture_white_wood_vgrain" x="244.63" y="126" width="16.37" height="68" />
+                        <!--  Animation supérieur  -->
+                        <rect id="placard_evier_gauche_porte_gauche_p" class="animPortePlacardEvierHautGaucheGauche texture_light_grey"  x="241.5" y="134.5" width="2" height="1" rx="0.5" ry="0.5" />
+                        <path id="placard_evier_gauche_porte_gauche"   class="animPortePlacardEvierHautGaucheGauche texture_soft_yellow" d="M243.061,137.329V126.671c0-.37.855-.671,1.909-.671h0v12h0C243.916,138,243.061,137.7, 243.061,137.329Z" />
+                        <rect id="placard_evier_gauche_porte_droite_p" class="animPortePlacardEvierHautGaucheDroit  texture_light_grey"  x="241.5" y="140.5" width="2" height="1" rx="0.5" ry="0.5" />
+                        <path id="placard_evier_gauche_porte_droite"   class="animPortePlacardEvierHautGaucheDroit  texture_soft_yellow" d="M243.061,149.329V138.671c0-.37.855-.671,1.909-.671h0v12h0C243.916,150,243.061,149.7,243.061,149.329Z"/>
+                        <rect id="placard_evier_droite_porte_gauche_p" class="animPortePlacardEvierHautDroitGauche  texture_light_grey"  x="241.5" y="166.5" width="2"height="1" rx="0.5" ry="0.5"/>
+                        <path id="placard_evier_droite_porte_gauche"   class="animPortePlacardEvierHautDroitGauche  texture_soft_yellow" d="M243.061,169.826V151.174c0-.648.855-1.174,1.909-1.174h0v21h0C243.916,171, 243.061,170.474,243.061,169.826Z"/>
+                        <rect id="placard_evier_droite_porte_droite_p" class="animPortePlacardEvierHautDroitDroit texture_light_grey"    x="241.5" y="174.5" width="2" height="1" rx="0.5" ry="0.5" />
+                        <path id="placard_evier_droite_porte_droite"   class="animPortePlacardEvierHautDroitDroit texture_soft_yellow"   d="M243.061,192.714V172.286c0-.71.855-1.286,1.909-1.286h0v23h0C243.916,194, 243.061,193.424,243.061,192.714Z" />                   
+                  </g>
+
+                  <!-- ----------------------------------------------------------------------------------------------------------- -->
+                  <!-- ----------------------------------------- SALLE DE BAIN --------------------------------------------------- -->
+                  <!-- ----------------------------------------------------------------------------------------------------------- -->
+      
+                  <g id="salle_de_bain">
+                        <!-- ---------------- Assets immobile ---------- -->
+                        <rect    id="bain_base"      class="texture_light_grey"             x="398.375" y="193.381" width="92.625" height="42.619" rx="1.226" ry="1.226" transform="translate(889.375 429.381) rotate(180)" />
+                        <path    id="bain_interieur" class="texture_light_grey_transparent" d="M486.094,207.523v13.822c0,6.911-4.807,9.276-6.2,9.215s-38.238,3.456-70.276, 0c-8.268-2.3-8.117-30.061-1.033-32.252,33.071-2.3,70.77-.192,72.343,0S485.5,200.5,486.094,207.523Z" />
+                        <path    id="bain_fond"      class="texture_white"                  d="M480.508,207.339v13.822c0,6.911-3.1,6.911-4.134,6.911s-31,2.3-63.042-1.152c-3.1-1.152-8.268-17.278, 0-25.341a505.623,505.623,0,0,1,64.075,0S479.474,201.58,480.508,207.339Z" />
+                        <ellipse id="bain_trou"      class="texture_light_grey"             cx="474.687" cy="214.69" rx="1.55" ry="1.728" />
+                        <path    id="wc_reservoir"   class="texture_light_grey"             d="M529.577,103.56v5.345c0,3.207-2,3.207-2,3.207h-19a3.007,3.007,0,0,1-3-3.207V103.56s0-2.138, 2-2.138h20C529.577,101.423,529.577,103.56,529.577,103.56Z" />
+                        <polygon id="wc_trou"        class="texture_light_grey"             points="518.577 107.836 518.577 108.905 518.077 108.905 517.577 108.371 518.077 107.836 518.577 107.836" />
+                        <path    id="wc_couvercle"   class="texture_light_grey_transparent" d="M528.577,106.767c.5-2.672-8-2.138-8-2.138h-6s-7.5-.534-7,2.138" />
+                        <path    id="wc_lunette"     class="texture_light_grey"             d="M524.5,112.112s7.206,19.24-2.059,25.654c-1.942,1.734-6.176,2.138-9.265, 0-10.294-6.413-2.059-25.654-2.059-25.654Z" />
+                        <rect    id="wc_vis1"        class="texture_black"                  x="513.577" y="114.25" width="1" height="1.069" />
+                        <rect    id="wc_vis2"        class="texture_black"                  x="521.577" y="114.25" width="1" height="1.069" />
+                        <ellipse id="wc_interieur"   class="texture_white"                  cx="517.577" cy="127.077" rx="7" ry="9.62" />
+                        <path    id="wc_trou"        class="texture_white"                  d="M516.538,121.939h.69a2.488,2.488,0,0,1,2.488,2.488v1.025a2.488,2.488,0,0,1-2.488,2.488h-.69a1.1,1.1,0,0, 1-1.1-1.1v-3.8A1.1,1.1,0,0,1,516.538,121.939Z" transform="translate(642.516 -392.639) rotate(90)" />
+                        <path    id="lavabo_base"    class="texture_light_grey"             d="M513,233c0-2,1-17,1-18a2.151,2.151,0,0,1,2-2c10,2,19,2,26,0,1,0,2,0,2,2s2,18,2,18a1.959,1.959,0,0,1-2, 2H515A1.959,1.959,0,0,1,513,233Z" />
+                        <path    id="lavabo_interior"class="texture_white"                  d="M516,230.545c0-1.455.818-12.364.818-13.091A1.671,1.671,0,0,1,518.455,216c8.182,1.455,15.545,1.455,21.273, 0,.818,0,1.636,0,1.636,1.455S543,230.545,543,230.545A1.488,1.488,0,0,1,541.364,232H517.636S516,232, 516,230.545Z" />
+                        <rect    id="lavabo_robinet" class="texture_light_grey"             x="529" y="228" width="2" height="6" />
+                        <rect    id="plaque_contour" class="texture_dark_grey"              x="513.5" y="181.5" width="31" height="31" />
+                        <rect    id="plaque"         class="plaqueDePressionSDB texture_light_grey_transparent" x="515.286" y="183" width="27.429" height="28" />
+                        <!-- ---------------- Animation ---------- -->
+                  </g>
+
+                  <!-- ----------------------------------------------------------------------------------------------------------- -->
+                  <!-- ---------------------------------------------- OBJET RFID ------------------------------------------------- -->
+                  <!-- ----------------------------------------------------------------------------------------------------------- -->
+
+                  <g id="objet_rfid">
+                        <!--Capteur-->
+                        <g id="capteur_couloir">
+                              <polyline class="cls-4" points="453.823 40.772 453.823 40.222 454.007 40.222 454.007 40.039 458.404 40.039 458.404 40.222 458.587 40.222 458.587 40.772 458.587 41.321 458.404 41.321 458.404 41.505 454.007 41.505 454.007 41.321 453.823 41.321 453.823 40.772"></polyline>
+                              <polygon class="cls-4" points="454.007 42.238 458.404 42.238 458.221 44.253 457.854 45.719 454.556 45.719 454.19 44.253 454.007 42.238"></polygon>
+                              <path class="cls-4" d="M455.811,49.7c-3.772,2.853-8.791-3.781-5.018-6.634.814-.625,1.371.1.557.725-2.818,2.3,1.213,7.426,4.031,5.13C456.327,48.4,456.757,49.182,455.811,49.7Z"></path>
+                              <path class="cls-4" d="M457.242,51.7c-6.277,4.748-14.192-5.716-7.915-10.464.9-.688,1.453.037.557.725-5.248,3.963,1.531,12.941,6.779,8.978C457.52,50.289,458.1,51.05,457.242,51.7Z"></path>
+                              <path class="cls-4" d="M458.694,53.544c-8.99,6.8-19.823-7.522-10.833-14.322.775-.595,1.332.13.557.725-7.7,5.827,2.015,18.653,9.711,12.826C458.865,52.233,459.43,53,458.694,53.544Z"></path>
+                              <ellipse class="cls-4" cx="440.768" cy="46.635" rx="1.786" ry="1.649"></ellipse>
+                              <path class="cls-4" d="M434.951,53.6a5.338,5.338,0,0,1,.55-3.115,8.867,8.867,0,0,1,3.481-2.016c.942-.025,1.478.355,1.649,1.1l-.55,4.764,2.2,1.649a19.158,19.158,0,0,1,.916,4.764.888.888,0,0,1-1.466.366c-.455-2.085-.919-4.247-1.1-4.214a7.639,7.639,0,0,1-2.382-1.649,10.144,10.144,0,0,1,.55-4.581,9.473,9.473,0,0,1-1.649.55c-.3.061-.437,1.241-.55,2.565A1.23,1.23,0,0,1,434.951,53.6Z"></path>
+                              <path class="cls-4" d="M437.883,55.8a1.539,1.539,0,0,1,1.283.916,16.08,16.08,0,0,1-2.016,4.581,1.2,1.2,0,0,1-1.283-.916A31.109,31.109,0,0,1,437.883,55.8Z"></path>
+                              <path class="cls-4" d="M441.272,52.223V49.841a16.869,16.869,0,0,1,2.565,2.382c.18.693.073,1.177-.55,1.283a.787.787,0,0,1-.55,0Z"></path>
+                        </g>
+                        <g id="capteur_salon">
+                              <polyline class="cls-4" points="75.823 214.772 75.823 214.222 76.007 214.222 76.007 214.039 80.404 214.039 80.404 214.222 80.587 214.222 80.587 214.772 80.587 215.321 80.404 215.321 80.404 215.505 76.007 215.505 76.007 215.321 75.823 215.321 75.823 214.772"></polyline>
+                              <polygon class="cls-4" points="76.007 216.238 80.404 216.238 80.221 218.253 79.854 219.719 76.556 219.719 76.19 218.253 76.007 216.238"></polygon>
+                              <path class="cls-4" d="M77.811,223.7c-3.772,2.853-8.791-3.781-5.018-6.634.814-.625,1.371.1.557.725-2.818,2.3,1.213,7.426,4.031,5.13C78.327,222.4,78.757,223.182,77.811,223.7Z"></path>
+                              <path class="cls-4" d="M79.242,225.7c-6.277,4.748-14.192-5.716-7.915-10.464.9-.688,1.453.037.557.725-5.248,3.963,1.531,12.941,6.779,8.978C79.52,224.289,80.1,225.05,79.242,225.7Z"></path>
+                              <path class="cls-4" d="M80.694,227.544c-8.99,6.8-19.823-7.522-10.833-14.322.775-.595,1.332.13.557.725-7.7,5.827,2.015,18.653,9.711,12.826C80.865,226.233,81.43,227,80.694,227.544Z"></path>
+                              <ellipse class="cls-4" cx="62.768" cy="220.635" rx="1.786" ry="1.649"></ellipse>
+                              <path class="cls-4" d="M56.951,227.6a5.338,5.338,0,0,1,.55-3.115,8.867,8.867,0,0,1,3.481-2.016c.942-.025,1.478.355,1.649,1.1l-.55,4.764,2.2,1.649a19.158,19.158,0,0,1,.916,4.764.888.888,0,0,1-1.466.366c-.455-2.085-.919-4.247-1.1-4.214a7.639,7.639,0,0,1-2.382-1.649,10.144,10.144,0,0,1,.55-4.581,9.473,9.473,0,0,1-1.649.55c-.3.061-.437,1.241-.55,2.565A1.23,1.23,0,0,1,56.951,227.6Z"></path>
+                              <path class="cls-4" d="M59.883,229.8a1.539,1.539,0,0,1,1.283.916,16.08,16.08,0,0,1-2.016,4.581,1.2,1.2,0,0,1-1.283-.916A31.109,31.109,0,0,1,59.883,229.8Z"></path>
+                              <path class="cls-4" d="M63.272,226.223v-2.382a16.869,16.869,0,0,1,2.565,2.382c.18.693.073,1.177-.55,1.283a.787.787,0,0,1-.55,0Z"></path>
+                        </g>
+                        <g id="capteur_cuisine">
+                              <polyline class="cls-4" points="205.823 8.772 205.823 8.222 206.007 8.222 206.007 8.039 210.404 8.039 210.404 8.222 210.587 8.222 210.587 8.772 210.587 9.321 210.404 9.321 210.404 9.505 206.007 9.505 206.007 9.321 205.823 9.321 205.823 8.772"></polyline>
+                              <polygon class="cls-4" points="206.007 10.238 210.404 10.238 210.221 12.253 209.854 13.719 206.556 13.719 206.19 12.253 206.007 10.238"></polygon>
+                              <path class="cls-4" d="M207.811,17.7c-3.772,2.853-8.791-3.781-5.018-6.634.814-.625,1.371.1.557.725-2.818,2.3,1.213,7.426,4.031,5.13C208.327,16.4,208.757,17.182,207.811,17.7Z"></path>
+                              <path class="cls-4" d="M209.242,19.7c-6.277,4.748-14.192-5.716-7.915-10.464.9-.688,1.453.037.557.725-5.248,3.963,1.531,12.941,6.779,8.978C209.52,18.289,210.1,19.05,209.242,19.7Z"></path>
+                              <path class="cls-4" d="M210.694,21.544c-8.99,6.8-19.823-7.522-10.833-14.322.775-.595,1.332.13.557.725-7.7,5.827,2.015,18.653,9.711,12.826C210.865,20.233,211.43,21,210.694,21.544Z"></path>
+                              <ellipse class="cls-4" cx="192.768" cy="14.635" rx="1.786" ry="1.649"></ellipse>
+                              <path class="cls-4" d="M186.951,21.6a5.338,5.338,0,0,1,.55-3.115,8.867,8.867,0,0,1,3.481-2.016c.942-.025,1.478.355,1.649,1.1l-.55,4.764,2.2,1.649a19.158,19.158,0,0,1,.916,4.764.888.888,0,0,1-1.466.366c-.455-2.085-.919-4.247-1.1-4.214a7.639,7.639,0,0,1-2.382-1.649,10.144,10.144,0,0,1,.55-4.581,9.473,9.473,0,0,1-1.649.55c-.3.061-.437,1.241-.55,2.565A1.23,1.23,0,0,1,186.951,21.6Z"></path>
+                              <path class="cls-4" d="M189.883,23.8a1.539,1.539,0,0,1,1.283.916,16.08,16.08,0,0,1-2.016,4.581,1.2,1.2,0,0,1-1.283-.916A31.109,31.109,0,0,1,189.883,23.8Z"></path>
+                              <path class="cls-4" d="M193.272,20.223V17.841a16.869,16.869,0,0,1,2.565,2.382c.18.693.073,1.177-.55,1.283a.787.787,0,0,1-.55,0Z"></path>
+                        </g>
+                        <g id="capteur_chambre">
+                              <polyline class="cls-4" points="340.823 217.772 340.823 217.222 341.007 217.222 341.007 217.039 345.404 217.039 345.404 217.222 345.587 217.222 345.587 217.772 345.587 218.321 345.404 218.321 345.404 218.505 341.007 218.505 341.007 218.321 340.823 218.321 340.823 217.772"></polyline>
+                              <polygon class="cls-4" points="341.007 219.238 345.404 219.238 345.221 221.253 344.854 222.719 341.556 222.719 341.19 221.253 341.007 219.238"></polygon>
+                              <path class="cls-4" d="M342.811,226.7c-3.772,2.853-8.791-3.781-5.018-6.634.814-.625,1.371.1.557.725-2.818,2.3,1.213,7.426,4.031,5.13C343.327,225.4,343.757,226.182,342.811,226.7Z"></path>
+                              <path class="cls-4" d="M344.242,228.7c-6.277,4.748-14.192-5.716-7.915-10.464.9-.688,1.453.037.557.725-5.248,3.963,1.531,12.941,6.779,8.978C344.52,227.289,345.1,228.05,344.242,228.7Z"></path>
+                              <path class="cls-4" d="M345.694,230.544c-8.99,6.8-19.823-7.522-10.833-14.322.775-.595,1.332.13.557.725-7.7,5.827,2.015,18.653,9.711,12.826C345.865,229.233,346.43,230,345.694,230.544Z"></path>
+                              <ellipse class="cls-4" cx="327.768" cy="223.635" rx="1.786" ry="1.649"></ellipse>
+                              <path class="cls-4" d="M321.951,230.6a5.338,5.338,0,0,1,.55-3.115,8.867,8.867,0,0,1,3.481-2.016c.942-.025,1.478.355,1.649,1.1l-.55,4.764,2.2,1.649a19.158,19.158,0,0,1,.916,4.764.888.888,0,0,1-1.466.366c-.455-2.085-.919-4.247-1.1-4.214a7.639,7.639,0,0,1-2.382-1.649,10.144,10.144,0,0,1,.55-4.581,9.473,9.473,0,0,1-1.649.55c-.3.061-.437,1.241-.55,2.565A1.23,1.23,0,0,1,321.951,230.6Z"></path>
+                              <path class="cls-4" d="M324.883,232.8a1.539,1.539,0,0,1,1.283.916,16.08,16.08,0,0,1-2.016,4.581,1.2,1.2,0,0,1-1.283-.916A31.109,31.109,0,0,1,324.883,232.8Z"></path>
+                              <path class="cls-4" d="M328.272,229.223v-2.382a16.869,16.869,0,0,1,2.565,2.382c.18.693.073,1.177-.55,1.283a.787.787,0,0,1-.55,0Z"></path>
+                        </g>
+                        <g id="capteur_sdb">
+                              <polyline class="cls-4" points="544.823 102.772 544.823 102.222 545.007 102.222 545.007 102.039 549.404 102.039 549.404 102.222 549.587 102.222 549.587 102.772 549.587 103.321 549.404 103.321 549.404 103.505 545.007 103.505 545.007 103.321 544.823 103.321 544.823 102.772"></polyline>
+                              <polygon class="cls-4" points="545.007 104.238 549.404 104.238 549.221 106.253 548.854 107.719 545.556 107.719 545.19 106.253 545.007 104.238"></polygon>
+                              <path class="cls-4" d="M546.811,111.7c-3.772,2.853-8.791-3.781-5.018-6.634.814-.625,1.371.1.557.725-2.818,2.3,1.213,7.426,4.031,5.13C547.327,110.4,547.757,111.182,546.811,111.7Z"></path>
+                              <path class="cls-4" d="M548.242,113.7c-6.277,4.748-14.192-5.716-7.915-10.464.9-.688,1.453.037.557.725-5.248,3.963,1.531,12.941,6.779,8.978C548.52,112.289,549.1,113.05,548.242,113.7Z"></path>
+                              <path class="cls-4" d="M549.694,115.544c-8.99,6.8-19.823-7.522-10.833-14.322.775-.595,1.332.13.557.725-7.7,5.827,2.015,18.653,9.711,12.826C549.865,114.233,550.43,115,549.694,115.544Z"></path>
+                              <ellipse class="cls-4" cx="531.768" cy="108.635" rx="1.786" ry="1.649"></ellipse>
+                              <path class="cls-4" d="M525.951,115.6a5.338,5.338,0,0,1,.55-3.115,8.867,8.867,0,0,1,3.481-2.016c.942-.025,1.478.355,1.649,1.1l-.55,4.764,2.2,1.649a19.158,19.158,0,0,1,.916,4.764.888.888,0,0,1-1.466.366c-.455-2.085-.919-4.247-1.1-4.214a7.639,7.639,0,0,1-2.382-1.649,10.144,10.144,0,0,1,.55-4.581,9.473,9.473,0,0,1-1.649.55c-.3.061-.437,1.241-.55,2.565A1.23,1.23,0,0,1,525.951,115.6Z"></path>
+                              <path class="cls-4" d="M528.883,117.8a1.539,1.539,0,0,1,1.283.916,16.08,16.08,0,0,1-2.016,4.581,1.2,1.2,0,0,1-1.283-.916A31.109,31.109,0,0,1,528.883,117.8Z"></path>
+                              <path class="cls-4" d="M532.272,114.223v-2.382a16.869,16.869,0,0,1,2.565,2.382c.18.693.073,1.177-.55,1.283a.787.787,0,0,1-.55,0Z"></path>
+                        </g>
+                  </g>
+
+
+                  <!-- -----------  Zone de selection pour changer de page html  ------------- -->
+                  <rect class="changeInterface" onclick='openPage("interface_cuisine_face")' x="125" y="110" width="140" height="140" />
+                  
+            </svg>
+
+      </div>
+
+      <!-- -----------  FULL SCREEN MODE  ------------- -->
+      <button id="buttonPleineEcran" class="btn btn-outline-info btn-lg btn-block" onclick="pleinEcran('container_plan')">Plein écran</button>
+
+      <!-- -----------  CONTAINER WHERE RFID ARE LOAD  ------------- -->
+      <div class="container-fluid">
+                  <h2>Activation des objets RFID</h2>
+                  <div class="checkbox checkbox-success checkbox-inline">
+                        <input type="checkbox" id="select_all">
+                        <label for="select_all">Tous les objets</label>
+                  </div>
+                  <div role="form">
+                        <div class="row" id="tableCheckbox"></div>
+                  </div>
+      </div>
+
+
+
+      <!-- -----------  CONTAINER WHERE TEXTURE ARE LOAD  ------------- -->
+      <div id="container-texture"></div>
+
+      <script src="js/WebsocketFunctions.js"></script>
+      <script src="js/WebsocketManager.js"></script>
+      <script src="js/animationChambre.js"></script>
+      <script src="js/objetDisplayRFID.js"></script>
+      <script src="js/GestionInterface.js"></script>
+      <script>switchPage("interface_cuisine_face", 120000)</script>
+
+</body>
+
+</html>

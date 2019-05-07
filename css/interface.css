@@ -1,0 +1,142 @@
+html, body {
+    height: 100%;
+}
+
+
+#container_plan:-webkit-full-screen {
+    width: 100%;
+    height: 100%;
+}
+
+#buttonPleineEcran {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.stroke {
+    stroke: black;
+    size: 1px;
+}
+
+.changeInterface {
+    fill: grey;
+    opacity: 0;
+}
+
+.changeInterface:hover {
+    fill: grey;
+    pointer-events: all;
+    opacity: 0.33;
+}
+
+.cls-1 {
+    fill: none;
+}
+
+.cls-2, .cls-3 {
+    fill: #fff;
+}
+
+.cls-2 {
+    stroke: #000;
+}
+
+.cls-2, .cls-3, .cls-4 {
+    stroke-miterlimit: 10;
+}
+
+.cls-3, .cls-4 {
+    stroke: #333;
+}
+
+.cls-4 {
+    fill: #900;
+    stroke-width: 0.5px;
+}
+
+#capteur_chambre {
+    visibility: hidden;
+}
+
+#capteur_salon {
+    visibility: hidden;
+}
+
+#capteur_couloir {
+    visibility: hidden;
+}
+
+#capteur_cuisine {
+    visibility: hidden;
+}
+
+#capteur_sdb {
+    visibility: hidden;
+}
+
+
+/* ****************************************************************************************************************** */
+/* *************************************************** ANIMATION **************************************************** */
+/* ****************************************************************************************************************** */
+
+.animLumiere {
+    transform-origin: 0px 100px;
+}
+
+.animPorteSalleConference {
+    transform-origin: 0px 116px;
+}
+
+.animPortePrincipale {
+    transform-origin: 425px 1px;
+}
+
+.animPorteSalleDeBain {
+    transform-origin: 406px 99px;
+}
+
+.animPorteFrigo {
+    transform-origin: 150px 175px;
+}
+
+.animPortePlacardFrigoBas {
+    transform-origin: 178px 206px;
+}
+
+.animPortePlacardFrigoHautDroit{
+    transform-origin: 210px 218px;
+}
+
+.animPortePlacardFrigoHautGauche{
+    transform-origin: 170px 218px;
+}
+
+.animPortePlacardEvierBasGauche {
+    transform-origin: 225px 110px;
+}
+
+.animPortePlacardEvierBasDroit {
+    transform-origin: 225px 177px;
+}
+
+.animPortePlacardEvierHautGaucheGauche {
+    transform-origin: 243px 127px;
+}
+
+.animPortePlacardEvierHautGaucheDroit {
+    transform-origin: 243px 149px;
+}
+
+.animPortePlacardEvierHautDroitGauche {
+    transform-origin: 243px 151px;
+}
+
+.animPortePlacardEvierHautDroitDroit {
+    transform-origin: 243px 192px;
+}
+
+.text {
+    animation: inherit;
+}
+
+

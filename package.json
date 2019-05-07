@@ -1,0 +1,27 @@
+{
+  "name": "lab-GUI",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manukd/xxx.git"
+  },
+  "author": "LIARA Laboratory",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/manukd/xxx/issues"
+  },
+  "homepage": "https://github.com/manukd/xxx#readme",
+  "dependencies": {
+    "alertifyjs": "^1.11.1",
+    "animejs": "^2.2.0",
+    "bootstrap": "^4.1.1",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.3"
+  }
+}
