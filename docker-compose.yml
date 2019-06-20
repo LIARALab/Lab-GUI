@@ -1,0 +1,21 @@
+version: '3.7'
+
+services:
+  lab-gui:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: lab-gui:latest
+    container_name: lab-gui
+    restart: always
+    environment: 
+      - TZ=America/Montreal
+    ports: 
+      - 80:80
+    networks:
+      - lab-gui-net
+
+networks:
+    lab-gui-net:
+      name: lab-gui-net
+      driver: bridge
